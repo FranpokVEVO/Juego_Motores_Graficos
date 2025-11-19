@@ -8,7 +8,10 @@ public class gravedad_a_normal : MonoBehaviour
     {
         var normal = other.GetComponent<jugadorsalto>();
         var invertido = other.GetComponent<jugador_salto_invertido>();
+        Rigidbody rb = other.GetComponent<Rigidbody>();
 
+        if (rb != null) rb.useGravity = true;
+          
         if (normal != null && invertido != null)
         {
             normal.enabled = true;

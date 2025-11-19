@@ -13,13 +13,15 @@ public float fuerzaSalto = 8f;
     {
         rb = GetComponent<Rigidbody>();
     }
-
+[SerializeField] private ParticleSystem particulas;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && enSuelo)
         {
             rb.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
             enSuelo = false;
+            particulas.Play();
+            
         }
 
         if (rb.velocity.y < 0)
@@ -32,5 +34,6 @@ public float fuerzaSalto = 8f;
     {
         enSuelo = true;
     }
+    
 
 }

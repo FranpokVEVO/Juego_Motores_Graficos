@@ -23,6 +23,7 @@ public float gravedad = 9.81f;
             gravedadInvertida = !gravedadInvertida;
             transform.Rotate(180f, 0f, 0f);
             sonido.Play();
+            particulas.Play();
         }
     }
 
@@ -40,4 +41,6 @@ public float gravedad = 9.81f;
     {
         enSuelo = false;
     }
+    [SerializeField] private ParticleSystem particulas;
+
 }
