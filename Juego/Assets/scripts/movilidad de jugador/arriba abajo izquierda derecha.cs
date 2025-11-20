@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class arribaabajoizquierdaderecha : MonoBehaviour
 {
-    // Start is called before the first frame update
+   public float velocidad = 10f;
+
     void Start()
     {
-        
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (rb != null) rb.useGravity = false;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
+
+        Vector3 movimiento = new Vector3(x, y, 0f).normalized * velocidad * Time.deltaTime;
+
+        transform.Translate(movimiento, Space.World);
     }
 }
