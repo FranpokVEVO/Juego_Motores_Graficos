@@ -4,23 +4,31 @@ using UnityEngine;
 
 public class disparo_jugador : MonoBehaviour
 {
-    public Transform Disparo;
-    public bool disparo;
+       public Transform Disparo;
     public GameObject bala;
+    public float fuerzaDisparo = 20f;
+    public Camera camara;
+
     void Update()
-
-
     {
-        disparo = Input.GetKeyDown(KeyCode.Mouse0);
-        if (disparo)
+        if (Input.GetMouseButtonDown(0))
         {
-            instantiatebala();
+            Direccion_Disparo();
         }
-
     }
-    public void instantiatebala()
+
+    void Direccion_Disparo()
     {
-        Instantiate(bala, Disparo.position, Disparo.rotation);
-    }
+        Vector3 mouse = Input.mousePosition;
 
+        mouse.z = Vector3.Distance(camara.transform.position, Disparo.position);
+
+        Vector3 objetivo = camara.ScreenToWorldPoint(mouse);
+        objetivo.z = Disparo.position.z;
+
+        Vector3 direccion = (objetivo - Disparo.position).normalized;
+
+        GameObject nuevaBala = Instantiate(bala, Disparo.position, Quaternion.LookRotation(direccion));
+        nuevaBala.GetComponent<Rigidbody>().AddForce(direccion * fuerzaDisparo, ForceMode.Impulse);
+    }
 }
