@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class cambio2 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            jugadorsalto salto = other.GetComponent<jugadorsalto>();
+            arribaabajoizquierdaderecha movLibre = other.GetComponent<arribaabajoizquierdaderecha>();
+
+            if (salto != null) salto.enabled = false;
+            if (movLibre != null) movLibre.enabled = true;
+
+          
+            Transform arma = other.transform.Find("ARMA"); 
+            if (arma != null) arma.gameObject.SetActive(true);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
