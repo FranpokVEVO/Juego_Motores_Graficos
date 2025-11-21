@@ -6,9 +6,11 @@ public class elimnar : MonoBehaviour
 {
 void OnTriggerEnter(Collider other)
     {
-       if (other.CompareTag("BALA"))
+       if (other.CompareTag("BALA") && other.CompareTag("Player"))
         {
-            Destroy(other.gameObject);
+               Destroy(other.gameObject); 
         }
+    
+        
     }
 }

@@ -16,21 +16,25 @@ private int inicioSpawnPoint;
     {
         Instance = this;
         spawnpoint = GameObject.FindGameObjectsWithTag("Spawnpoint");
-        inicioSpawnPoint = PlayerPrefs.GetInt("SpawnInicial");
-        Instantiate(jugador, spawnpoint[inicioSpawnPoint].transform.position, Quaternion.identity);
 
+       
+        inicioSpawnPoint = PlayerPrefs.GetInt("SpawnInicial", 0);
+
+      
+        Instantiate(jugador, spawnpoint[inicioSpawnPoint].transform.position, Quaternion.identity);
     }
-public void ultimoSpawn (GameObject spawn)
+ public void ultimoSpawn(GameObject spawn)
     {
         for (int i = 0; i < spawnpoint.Length; i++)
         {
-            if (spawnpoint[i]== spawn)
+            if (spawnpoint[i] == spawn)
             {
                 PlayerPrefs.SetInt("SpawnInicial", i);
+                PlayerPrefs.Save();
+                Debug.Log("GUARDADO SPAWN: " + i);
             }
         }
     }
-
 private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
