@@ -15,7 +15,7 @@ public class bala : MonoBehaviour
     public void disparo(Vector3 direccion)
     {
         balaRb.velocity = direccion * speed;
-     Destroy(gameObject, destruir);
+        Destroy(gameObject, destruir);
     }
     private void OnCollisionEnter(Collision colision)
     {
