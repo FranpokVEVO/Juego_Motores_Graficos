@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spawner1
   - BALA
+  - Spawnpoint
   layers:
   - Default
   - TransparentFX
