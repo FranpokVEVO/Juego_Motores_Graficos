@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class cambio2 : MonoBehaviour
 {
+    public GameObject enemigos;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -14,9 +15,9 @@ public class cambio2 : MonoBehaviour
             if (salto != null) salto.enabled = false;
             if (movLibre != null) movLibre.enabled = true;
 
-          
             Transform arma = other.transform.Find("ARMA"); 
             if (arma != null) arma.gameObject.SetActive(true);
+            if (enemigos != null) enemigos.SetActive(true);
         }
     }
 
