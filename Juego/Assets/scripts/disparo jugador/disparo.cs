@@ -8,12 +8,16 @@ public class disparo_jugador : MonoBehaviour
     public GameObject bala;
     public float fuerzaDisparo = 20f;
     public Camera camara;
+    public float cooldown = 0.5f;
+
+    private float siguiente_disparo = 0f;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Time.time >= siguiente_disparo)
         {
             Direccion_Disparo();
+            siguiente_disparo = Time.time + cooldown;
         }
     }
 

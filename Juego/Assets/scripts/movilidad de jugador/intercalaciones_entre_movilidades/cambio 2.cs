@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class cambio2 : MonoBehaviour
 {
-    public GameObject enemigos;
+    public GameObject Enemigos;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -17,7 +17,7 @@ public class cambio2 : MonoBehaviour
 
             Transform arma = other.transform.Find("ARMA"); 
             if (arma != null) arma.gameObject.SetActive(true);
-            if (enemigos != null) enemigos.SetActive(true);
+            if (Enemigos != null) Enemigos.SetActive(true);
         }
     }
 

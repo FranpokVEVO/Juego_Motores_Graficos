@@ -4,43 +4,56 @@ using UnityEngine;
 
 public class minions_seguimiento_daño : MonoBehaviour
 {
- 
     public Transform player;
     public float speed = 3f;
-
-  
     public int vida = 50;
 
-    void Update()
+    private Rigidbody rb;
+
+    void Start()
     {
-    
-        if (player != null)
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        rb = GetComponent<Rigidbody>();
+
+        if (rb != null)
         {
-            Vector3 direction = (player.position - transform.position).normalized;
-            transform.position += direction * speed * Time.deltaTime;
-            transform.LookAt(player);
+            rb.freezeRotation = true;
+            rb.useGravity = false; 
         }
     }
+
+    void FixedUpdate()
+    {
+        if (player != null && rb != null)
+        {
+     
+            Vector3 direccion = (player.position - transform.position).normalized;
+
+          
+            rb.MovePosition(transform.position + direccion * speed * Time.fixedDeltaTime);
+
+         
+            if (direccion != Vector3.zero)
+            {
+                rb.MoveRotation(Quaternion.LookRotation(direccion));
+            }
+        }
+    }
+
     public void TomarDamage(int damage)
     {
         vida -= damage;
-        Debug.Log("Enemigo vida: " + vida);
+        Debug.Log("Vida enemigo: " + vida);
 
         if (vida <= 0)
         {
-            Morir();
+            Destroy(gameObject);
         }
     }
 
-    void Morir()
-    {
-        Destroy(gameObject);
-    }
-
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("BALA")) 
+        if (other.CompareTag("BALA"))
         {
             BALA_stats bala = other.GetComponent<BALA_stats>();
             if (bala != null)

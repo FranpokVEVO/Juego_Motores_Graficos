@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class daño_enemigo : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            jugadormorir vida = other.GetComponent<jugadormorir>();
+    public int maxGolpes = 3; 
+    private int golpesRecibidos = 0;
 
-            if (vida != null)
-            {
-                vida.Morir();
-            }
+    public void Morir()
+    {
+        golpesRecibidos++;
+
+        Debug.Log("Golpes recibidos: " + golpesRecibidos);
+
+        if (golpesRecibidos >= maxGolpes)
+        {
+            Debug.Log("Jugador muerto");
+            
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
