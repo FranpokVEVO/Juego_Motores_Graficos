@@ -15,23 +15,23 @@ public class spawnobstaculos : MonoBehaviour
 
     void Update()
     {
-        if (Player == null) return;
+     if (Player == null) return;
 
-        timer += Time.deltaTime;
+    timer += Time.deltaTime;
 
-        if (timer >= spawnInterval)
-        {
-            timer = 0f;
+    if (timer >= spawnInterval)
+    {
+        timer = 0f;
 
-      
-            int index = Random.Range(0, obstaclePrefabs.Length);
+        int index = Random.Range(0, obstaclePrefabs.Length);
 
-            float selectedY = (index == 0) ? posY1 : posY2;
+        float selectedY = (index == 0) ? posY1 : posY2;
 
-            Vector3 spawnPos = new Vector3(Player.position.x + spawnX, selectedY, Player.position.z);
+        Vector3 spawnPos = new Vector3(Player.position.x + spawnX, selectedY, Player.position.z);
+        Quaternion spawnRot = Quaternion.Euler(0, 90, 0); 
 
-            Instantiate(obstaclePrefabs[index], spawnPos, Quaternion.identity);
-        }
+        Instantiate(obstaclePrefabs[index], spawnPos, spawnRot);
+    }
     }
 }
 

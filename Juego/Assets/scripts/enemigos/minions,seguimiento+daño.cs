@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class minions_seguimiento_daño : MonoBehaviour
 {
-    public Transform player;
+public Transform player;
     public float speed = 3f;
     public int vida = 50;
 
@@ -18,7 +18,7 @@ public class minions_seguimiento_daño : MonoBehaviour
         if (rb != null)
         {
             rb.freezeRotation = true;
-            rb.useGravity = false; 
+            rb.useGravity = false;
         }
     }
 
@@ -26,13 +26,14 @@ public class minions_seguimiento_daño : MonoBehaviour
     {
         if (player != null && rb != null)
         {
-     
             Vector3 direccion = (player.position - transform.position).normalized;
 
           
-            rb.MovePosition(transform.position + direccion * speed * Time.fixedDeltaTime);
+            Vector3 velocidadFinal = direccion * speed;
+            velocidadFinal.x = Mathf.Max(velocidadFinal.x, 3f); 
 
-         
+            rb.MovePosition(transform.position + velocidadFinal * Time.fixedDeltaTime);
+
             if (direccion != Vector3.zero)
             {
                 rb.MoveRotation(Quaternion.LookRotation(direccion));

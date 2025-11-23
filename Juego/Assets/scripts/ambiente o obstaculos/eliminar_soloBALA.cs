@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class elimnar : MonoBehaviour
+public class eliminar_soloBALA : MonoBehaviour
 {
 void OnTriggerEnter(Collider other)
 {
-    if (other.CompareTag("BALA") || other.CompareTag("Obstaculos") || other.CompareTag("Enemy") || other.CompareTag("Ataque"))
+    if (other.CompareTag("BALA"))
     {
         Destroy(other.gameObject);
     }

@@ -4,23 +4,39 @@ using UnityEngine;
 
 public class CAMBIODEFASE : MonoBehaviour
 {
-[SerializeField] private GameObject boss;
-[SerializeField] private GameObject enemigos;
-    public void Cambiar()
+ private void OnTriggerEnter(Collider other)
     {
-        if (boss != null)
+        if (other.CompareTag("Player"))
         {
-            boss bossScript = boss.GetComponent<boss>();
-            if (bossScript != null)
-                bossScript.enabled = false;
+            GameObject mainCam = GameObject.FindWithTag("MainCamera");
 
-            RAYO rayoScript = boss.GetComponent<RAYO>();
-            if (rayoScript != null)
-                rayoScript.enabled = true;
-        }
-                if (enemigos != null)
-        {
-            enemigos.SetActive(false);
+            if (mainCam != null)
+            {
+               
+                Transform bossTransform = mainCam.transform.Find("BOSS");
+                if (bossTransform != null)
+                {
+                    bossTransform.gameObject.SetActive(true);
+
+                   
+                    boss bossScript = bossTransform.GetComponent<boss>();
+                    if (bossScript != null) bossScript.enabled = false;
+
+                 
+                    RAYO rayoScript = bossTransform.GetComponent<RAYO>();
+                    if (rayoScript != null) rayoScript.enabled = true;
+                }
+
+            
+                Transform enemigosTransform = mainCam.transform.Find("Enemigos");
+                if (enemigosTransform != null)
+                {
+                    enemigosTransform.gameObject.SetActive(false);
+                }
+            }
+
+            // Desactivar el trigger
+            gameObject.SetActive(false);
         }
     }
 }
