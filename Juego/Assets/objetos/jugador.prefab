@@ -9850,7 +9850,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 5638b3c57f8787c45b0d9fc6c801daf9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10121,3 +10121,4 @@ MonoBehaviour:
   bala: {fileID: 3126449007435683278, guid: d484c622ac29a6344a96555443967efb, type: 3}
   fuerzaDisparo: 45
   camara: {fileID: 0}
+  cooldown: 0.5

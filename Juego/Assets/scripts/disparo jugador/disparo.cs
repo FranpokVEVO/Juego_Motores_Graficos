@@ -9,7 +9,7 @@ public class disparo_jugador : MonoBehaviour
     public float fuerzaDisparo = 20f;
     public Camera camara;
     public float cooldown = 0.5f;
-
+public AudioSource disparoAudio;
     private float siguiente_disparo = 0f;
 
     void Update()
@@ -18,6 +18,8 @@ public class disparo_jugador : MonoBehaviour
         {
             Direccion_Disparo();
             siguiente_disparo = Time.time + cooldown;
+               if (disparoAudio != null)
+                disparoAudio.Play();
         }
     }
 
