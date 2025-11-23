@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class boss : MonoBehaviour
 {
+    public sonidoboss sonidoboss;
     public GameObject ataquePrefab; 
     public float spawnInterval = 2f; 
 
@@ -15,6 +16,7 @@ public class boss : MonoBehaviour
 
         if (timer >= spawnInterval)
         {
+            sonidoboss.playDisparoBOSS();
             timer = 0f;
             SpawnAtaque();
         }
