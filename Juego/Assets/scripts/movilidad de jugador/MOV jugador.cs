@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cambio_De_Gravedad : MonoBehaviour
 {
+
 public float gravedad = 9.81f;
     private Rigidbody rb;
     private bool gravedadInvertida = false;
