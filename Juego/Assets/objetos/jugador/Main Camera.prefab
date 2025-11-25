@@ -1778,7 +1778,7 @@ PrefabInstance:
     - target: {fileID: 8316397475319131208, guid: c3371415a1075fb4eaa4a31f27b233fa,
         type: 3}
       propertyPath: spawnInterval
-      value: 1.5
+      value: 1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1925,10 +1925,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e194d07a203c47b49861fef971496403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaMax: 130
+  vidaMax: 150
   objetoASpawnear: {fileID: 832819754153987417, guid: 9476f16823a302446af8e34f6e4d7a6f,
     type: 3}
-  intervaloSpawn: 0.5
+  intervaloSpawn: 0.25
   yMin: -4.5
   yMax: 5
 --- !u!4 &7467051508456221390 stripped
@@ -1958,7 +1958,7 @@ PrefabInstance:
     - target: {fileID: 823256480928232094, guid: 7e140c148a631c0438c20cdcbff4e552,
         type: 3}
       propertyPath: intervalo1
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 823256480928232094, guid: 7e140c148a631c0438c20cdcbff4e552,
         type: 3}
@@ -2029,7 +2029,7 @@ PrefabInstance:
     - target: {fileID: 3872028207683655379, guid: 7e140c148a631c0438c20cdcbff4e552,
         type: 3}
       propertyPath: velocidad
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4533268874554136520, guid: 7e140c148a631c0438c20cdcbff4e552,
         type: 3}

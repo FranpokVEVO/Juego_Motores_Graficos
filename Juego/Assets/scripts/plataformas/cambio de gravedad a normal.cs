@@ -16,7 +16,7 @@ public class gravedad_a_normal : MonoBehaviour
         {
             normal.enabled = true;
             invertido.enabled = false;
-        
+        other.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
     }
 }

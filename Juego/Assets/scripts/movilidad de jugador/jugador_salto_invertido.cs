@@ -15,6 +15,7 @@ public class jugador_salto_invertido : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
+        transform.rotation = Quaternion.Euler(-180f, 0f, 0f);
     }
 
     void Update()
