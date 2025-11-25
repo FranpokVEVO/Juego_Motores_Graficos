@@ -22,6 +22,17 @@ private void OnTriggerEnter(Collider other)
                 if (enemigosTransform != null)
                 enemigosTransform.gameObject.SetActive(true);
             }
+        
+            GameObject sonidoFondo = GameObject.Find("sonido de fondo");
+            if (sonidoFondo != null)
+                sonidoFondo.SetActive(false);
+
+            GameObject jefeSound = GameObject.Find("jefe");
+            if (jefeSound != null)
+            {
+                jefeSound.GetComponent<AudioSource>().playOnAwake = true;
+                jefeSound.GetComponent<AudioSource>().Play();
+            }
             gameObject.SetActive(false);
         }
     }
