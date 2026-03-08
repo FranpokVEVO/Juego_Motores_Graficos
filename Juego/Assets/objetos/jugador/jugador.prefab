@@ -9797,6 +9797,7 @@ GameObject:
   - component: {fileID: 2996000051977929330}
   - component: {fileID: 6520976038151286773}
   - component: {fileID: 36879326964999741}
+  - component: {fileID: 4227290706419815458}
   m_Layer: 0
   m_Name: jugador
   m_TagString: Player
@@ -10044,6 +10045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fuerzaSalto: 7
   fuerzaGravedadExtra: 10
+  animator: {fileID: 0}
   particulas: {fileID: 8946662068649168540}
 --- !u!114 &6520976038151286773
 MonoBehaviour:
@@ -10073,6 +10075,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 10
+--- !u!111 &4227290706419815458
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8039986969426883571}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &9038863495492472987
 GameObject:
   m_ObjectHideFlags: 0
@@ -10117,6 +10134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8843a3798bb7a4ba27a5882eefe88f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SonidoDisparo: {fileID: 0}
   Disparo: {fileID: 4155549959884971416}
   bala: {fileID: 3126449007435683278, guid: d484c622ac29a6344a96555443967efb, type: 3}
   fuerzaDisparo: 45

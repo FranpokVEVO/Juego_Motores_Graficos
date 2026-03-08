@@ -10,6 +10,7 @@ public float gravedad = 9.81f;
     private bool gravedadInvertida = false;
     private bool enSuelo = false;
     private AudioSource sonido;
+    public Animator animator;
     void Start()
     {
         rb = GetComponent<Rigidbody>();

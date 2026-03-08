@@ -8,6 +8,7 @@ public float fuerzaSalto = 8f;
     public float fuerzaGravedadExtra = 10f;
     bool enSuelo = true;
     Rigidbody rb;
+public Animator animator;
 
     void Start()
     {
@@ -20,8 +21,7 @@ public float fuerzaSalto = 8f;
         {
             rb.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
             enSuelo = false;
-            particulas.Play();
-            
+             particulas.Play();
         }
 
         if (rb.velocity.y < 0)
