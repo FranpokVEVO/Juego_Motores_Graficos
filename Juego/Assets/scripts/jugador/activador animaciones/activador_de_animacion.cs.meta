@@ -3,7 +3,8 @@ guid: eb97dce5ee15c5040bad71afb4110d61
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - clipDeAnimacion: {fileID: 7400000, guid: 1165edca16d9fc540bc066c5dc276834, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
