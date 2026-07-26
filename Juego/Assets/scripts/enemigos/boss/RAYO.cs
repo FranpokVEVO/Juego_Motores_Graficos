@@ -53,7 +53,7 @@ public class RAYO : MonoBehaviour
 
             Vector3 spawnPos = new Vector3(transform.position.x, yRandom, transform.position.z);
 
-            Instantiate(objetoASpawnear, spawnPos, Quaternion.Euler(0, 0, 90)); 
+            Instantiate(objetoASpawnear, spawnPos, Quaternion.Euler(0, 0, 0)); 
 
             yield return new WaitForSeconds(intervaloSpawn);
         }
