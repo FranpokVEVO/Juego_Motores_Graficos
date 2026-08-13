@@ -5,10 +5,10 @@ using UnityEngine;
 public class elimnar : MonoBehaviour
 {
 void OnTriggerEnter(Collider other)
+{
+    if (other.CompareTag("BALA") || other.CompareTag("Obstaculos") || other.CompareTag("Enemy") || other.CompareTag("Ataque"))
     {
-       if (other.CompareTag("BALA"))
-        {
-               Destroy(other.gameObject); 
-        }
+        Destroy(other.gameObject);
     }
+}
 }

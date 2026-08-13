@@ -7,6 +7,10 @@ TagManager:
   - Spawner1
   - BALA
   - Spawnpoint
+  - BOSS
+  - Enemy
+  - Ataque
+  - Obstaculos
   layers:
   - Default
   - TransparentFX
